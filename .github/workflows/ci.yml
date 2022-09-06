@@ -12,4 +12,4 @@ jobs:
     
     steps:
       - name: Run mermaid test
-        run: cat diagram-2022-09-06 14_21_17.md >> $GITHUB_STEP_SUMMARY
+        run: cat 'diagram-2022-09-06 14_21_17.md' >> $GITHUB_STEP_SUMMARY
