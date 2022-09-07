@@ -12,6 +12,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: Setup node action
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"      
+    
+      - name: Install mermaid dependency
+        run: npm install -g @mermaid-js/mermaid-cli
+        
+      - name: Run mermaid convertion
+        run: mmdc -h
     
       - name: Run mermaid test
         run: cat 'diagram-2022-09-06 14_21_17.md' >> $GITHUB_STEP_SUMMARY
