@@ -24,4 +24,4 @@ jobs:
       - name: Run mermaid convertion
         run: |
           mmdc -i 'diagram-2022-09-06 14_21_17.md' -o mermaid.svg
-          cat mermaid.svg >> $GITHUB_STEP_SUMMARY
+          cat mermaid-1.svg >> $GITHUB_STEP_SUMMARY
