@@ -17,7 +17,7 @@ jobs:
         uses: nielsvaneck/render-md-mermaid@v2
 
       - name: Commit rendered png and svg files
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v3
         with:
           file_pattern: "*[.svg,.png]"
           commit_message: automatically rendered mermaid diagrams
