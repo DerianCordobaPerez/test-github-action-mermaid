@@ -22,6 +22,10 @@ jobs:
         run: npm install -g @mermaid-js/mermaid-cli
         
       - name: Run mermaid convertion
-        run: |
-          mmdc -i 'diagram-2022-09-06 14_21_17.md' -o mermaid.svg
-          cat mermaid-1.svg >> $GITHUB_STEP_SUMMARY
+        run: mmdc -i 'diagram-2022-09-06 14_21_17.md' -o mermaid.svg
+        
+      - name: Upload svg in artifcat
+        uses: actions/upload-artifact@v3
+        with:
+          name: mermaid-svg
+          path: mermaid-1.svg
