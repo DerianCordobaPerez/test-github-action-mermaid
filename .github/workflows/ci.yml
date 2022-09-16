@@ -17,15 +17,17 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "16.x"      
+      
+      - name: Install dependencies
+        run: npm install
     
-      - name: Install mermaid dependency
-        run: npm install -g @mermaid-js/mermaid-cli
-        
-      - name: Run mermaid convertion
-        run: mmdc -i 'diagram-2022-09-06 14_21_17.md' -o mermaid.svg
+      - name: Generate diagram
+        run: npx generate-diagram -- -i 'diagram-2022-09-06 14_21_17.md' -o diagram.svg
         
       - name: Upload svg in artifcat
         uses: actions/upload-artifact@v3
         with:
-          name: mermaid-svg
-          path: mermaid-1.svg
+          name: diagram-svg
+          path: diagram-1.svg
+        
+          
